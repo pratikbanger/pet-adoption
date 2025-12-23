@@ -1,6 +1,6 @@
 const app = require("./app");
 const sequelize = require("./config/db");
-require("./models"); // load associations
+require("./models");
 require("dotenv").config();
 
 const seedAdmin = require("./utils/seedAdmin");

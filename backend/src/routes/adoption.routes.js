@@ -5,7 +5,6 @@ const adoptionController = require("../controllers/adoption.controller");
 const { verifyToken } = require("../middlewares/auth.middleware");
 const { allowRoles } = require("../middlewares/role.middleware");
 
-// User routes
 router.post(
     "/apply",
     verifyToken,
@@ -20,7 +19,6 @@ router.get(
     adoptionController.getMyApplications
 );
 
-// Admin routes
 router.get(
     "/",
     verifyToken,

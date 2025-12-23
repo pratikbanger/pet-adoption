@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
-const db = require("../config/db"); // adjust path if needed
-const { Pet } = require("../models"); // adjust path if needed
+const db = require("../config/db");
+const { Pet } = require("../models");
 
 const samplePets = [
     {
@@ -53,7 +53,7 @@ const samplePets = [
 
 const seed = async () => {
     try {
-        await db.sync({ force: false }); // keep true if you want to reset DB
+        await db.sync({ force: false });
         await Pet.bulkCreate(samplePets, { ignoreDuplicates: true });
         console.log("Sample pets added successfully!");
         process.exit();
