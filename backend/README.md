@@ -11,15 +11,15 @@ Backend service for the Pet Adoption Management System built with **Node.js, Exp
 
 ## 📂 Project Structure
 backend/
-├── controllers/
-├── routes/
-├── models/
-├── middlewares/
-├── configs/
-├── scripts/
-├── .env.example
-├── server.js
-└── package.json
+    controllers/
+    routes/
+    models/
+    middlewares/
+    configs/
+    scripts/
+    .env.example
+    server.js
+    package.json
 
 ## ⚙️ Environment Variables
 PORT=5000
