@@ -100,7 +100,7 @@ npm run dev
 
 ### 3️⃣ Seed Sample Data
 ```bash
-node scripts/seedPets.js
+node src/scripts/seedPets.js
 ```
 
 ### 4️⃣ Frontend Setup
