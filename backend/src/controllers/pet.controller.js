@@ -12,7 +12,7 @@ exports.getPets = async (req, res) => {
             minAge,
             maxAge,
             page = 1,
-            limit = 10,
+            limit = 8,
         } = req.query;
 
         const where = {

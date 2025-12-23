@@ -16,10 +16,8 @@ const AppRoutes = () => {
             <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
             <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
 
-            {/* User */}
             <Route path="/my-applications" element={<MyApplications />} />
 
-            {/* Admin */}
             <Route path="/admin/pets" element={<AdminRoute><Pets /></AdminRoute>} />
             <Route path="/admin/applications" element={<AdminRoute><Applications /></AdminRoute>} />
         </Routes>
