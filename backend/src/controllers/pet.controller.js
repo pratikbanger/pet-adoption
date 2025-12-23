@@ -2,7 +2,6 @@ const { Op } = require("sequelize");
 const { Pet } = require("../models");
 const { isEmpty } = require("../utils/validate");
 
-// GET /api/pets (Public)
 exports.getPets = async (req, res) => {
     try {
         const {
@@ -57,7 +56,6 @@ exports.getPets = async (req, res) => {
     }
 };
 
-// GET /api/pets/:id (Public)
 exports.getPetById = async (req, res) => {
     try {
         const pet = await Pet.findByPk(req.params.id);
@@ -72,7 +70,6 @@ exports.getPetById = async (req, res) => {
     }
 };
 
-// POST /api/pets (Admin)
 exports.createPet = async (req, res) => {
     try {
         const { name, species, breed, age } = req.body;
@@ -89,7 +86,6 @@ exports.createPet = async (req, res) => {
     }
 };
 
-// PUT /api/pets/:id (Admin)
 exports.updatePet = async (req, res) => {
     try {
         const pet = await Pet.findByPk(req.params.id);
@@ -104,7 +100,6 @@ exports.updatePet = async (req, res) => {
     }
 };
 
-// DELETE /api/pets/:id (Admin)
 exports.deletePet = async (req, res) => {
     try {
         const pet = await Pet.findByPk(req.params.id);

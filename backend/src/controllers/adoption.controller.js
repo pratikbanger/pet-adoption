@@ -1,6 +1,5 @@
 const { Adoption, Pet, User } = require("../models");
 
-// USER: Apply for adoption
 exports.applyForAdoption = async (req, res) => {
     try {
         const userId = req.user.id;
@@ -43,7 +42,6 @@ exports.applyForAdoption = async (req, res) => {
     }
 };
 
-// USER: View own applications
 exports.getMyApplications = async (req, res) => {
     try {
         const userId = req.user.id;
@@ -60,7 +58,6 @@ exports.getMyApplications = async (req, res) => {
     }
 };
 
-// ADMIN: View all applications
 exports.getAllApplications = async (req, res) => {
     try {
         const applications = await Adoption.findAll({
@@ -77,7 +74,6 @@ exports.getAllApplications = async (req, res) => {
     }
 };
 
-// ADMIN: Approve / Reject
 exports.updateApplicationStatus = async (req, res) => {
     try {
         const { id } = req.params;
@@ -98,7 +94,6 @@ exports.updateApplicationStatus = async (req, res) => {
         adoption.status = status;
         await adoption.save();
 
-        // If approved → mark pet as adopted
         if (status === "APPROVED") {
             adoption.Pet.status = "ADOPTED";
             await adoption.Pet.save();
