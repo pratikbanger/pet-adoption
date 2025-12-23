@@ -6,21 +6,22 @@ import PetDetails from "../pages/PetDetails";
 import MyApplications from "../pages/user/MyApplications";
 import Pets from "../pages/admin/Pets";
 import Applications from "../pages/admin/Applications";
-
+import PublicRoute from "./PublicRoute";
+import AdminRoute from "./AdminRoute"
 const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/pets/:id" element={<PetDetails />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+            <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
 
             {/* User */}
             <Route path="/my-applications" element={<MyApplications />} />
 
             {/* Admin */}
-            <Route path="/admin/pets" element={<Pets />} />
-            <Route path="/admin/applications" element={<Applications />} />
+            <Route path="/admin/pets" element={<AdminRoute><Pets /></AdminRoute>} />
+            <Route path="/admin/applications" element={<AdminRoute><Applications /></AdminRoute>} />
         </Routes>
     );
 };

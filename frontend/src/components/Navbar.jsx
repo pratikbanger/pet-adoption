@@ -1,8 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
     const { auth, logout } = useAuth();
+    const navigate = useNavigate()
+
+    const handleLogOut = () => {
+        logout()
+        navigate("/login")
+    }
 
     return (
         <nav className="p-4 bg-blue-600 text-white flex justify-between">
@@ -25,7 +31,7 @@ const Navbar = () => {
                         {auth.user.role === "USER" && (
                             <Link to="/my-applications">My Applications</Link>
                         )}
-                        <button onClick={logout}>Logout</button>
+                        <button onClick={handleLogOut}>Logout</button>
                     </>
                 )}
             </div>

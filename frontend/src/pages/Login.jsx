@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
 import { useAuth } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const Login = () => {
     const { login } = useAuth();
@@ -18,7 +19,7 @@ const Login = () => {
             login(res.data.token);
             navigate("/"); // redirect to home after login
         } catch (error) {
-            alert(error.response?.data?.message || "Login failed");
+            toast.error(error.response?.data?.message || "Login failed")
         }
         setLoading(false);
     };

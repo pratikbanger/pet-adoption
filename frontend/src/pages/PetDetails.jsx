@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../api/axios";
 import { useAuth } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const PetDetails = () => {
     const { id } = useParams();
@@ -51,10 +52,10 @@ const PetDetails = () => {
         try {
             await api.post("/adoptions/apply", { petId: id });
             setApplied(true);
-            alert("Application submitted successfully!");
+            toast.success("Application submitted successfully!")
         } catch (error) {
             console.error(error);
-            alert(error.response?.data?.message || "Failed to apply");
+            toast.error(error.response?.data?.message || "Failed to apply")
         }
         setSubmitting(false);
     };
@@ -87,8 +88,8 @@ const PetDetails = () => {
                     disabled={applied || pet.status === "ADOPTED" || submitting}
                     onClick={handleApply}
                     className={`px-6 py-2 rounded text-white ${applied || pet.status === "ADOPTED"
-                            ? "bg-gray-400 cursor-not-allowed"
-                            : "bg-blue-600 hover:bg-blue-700"
+                        ? "bg-gray-400 cursor-not-allowed"
+                        : "bg-blue-600 hover:bg-blue-700"
                         }`}
                 >
                     {pet.status === "ADOPTED"

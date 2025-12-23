@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../api/axios";
 import PetCard from "../../components/PetCard";
+import toast from "react-hot-toast";
 
 const Pets = () => {
     const [pets, setPets] = useState([]);
@@ -45,7 +46,7 @@ const Pets = () => {
             fetchPets();
         } catch (error) {
             console.error("Failed to save pet", error);
-            alert(error.response?.data?.message || "Error saving pet");
+            toast.error(error.response?.data?.message || "Error saving pet")
         }
     };
 
