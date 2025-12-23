@@ -41,7 +41,7 @@ npm run dev
 
 ## 🧪 Seed Data
 ```bash
-node scripts/seedPets.js
+node src/scripts/seedPets.js
 ```
 
 ## 📌 Author
