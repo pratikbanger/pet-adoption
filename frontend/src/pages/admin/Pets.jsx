@@ -257,19 +257,6 @@ const Pets = () => {
                                 />
                             </div>
 
-                            {/* <div className="space-y-2">
-                                <label className="text-sm font-semibold text-slate-700">Status</label>
-                                <select
-                                    value={form.status}
-                                    onChange={(e) => setForm({ ...form, status: e.target.value })}
-                                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
-                                >
-                                    <option value="Available">Available</option>
-                                    <option value="Adopted">Adopted</option>
-                                    <option value="Pending">Pending</option>
-                                </select>
-                            </div> */}
-
                             <div className="md:col-span-2 flex justify-end gap-3 border-t border-slate-100">
                                 <button
                                     type="button"
