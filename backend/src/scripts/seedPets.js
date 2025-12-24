@@ -19,7 +19,7 @@ const samplePets = [
         breed: "Siamese",
         age: 2,
         description: "Loves to cuddle.",
-        photoUrl: "https://placekitten.com/400/300",
+        photoUrl: "https://placecats.com/neo_banana/401/301",
         status: "AVAILABLE",
     },
     {
@@ -37,7 +37,7 @@ const samplePets = [
         breed: "Maine Coon",
         age: 1,
         description: "Playful kitten.",
-        photoUrl: "https://placekitten.com/401/301",
+        photoUrl: "https://placecats.com/millie/401/301",
         status: "AVAILABLE",
     },
     {
